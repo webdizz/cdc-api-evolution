@@ -1,0 +1,2 @@
+service.stock.price.url: http://stock.price.dev:8080
+server.port: 8081

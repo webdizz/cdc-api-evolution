@@ -1,0 +1,53 @@
+buildscript {
+  repositories {
+    jcenter()
+    maven { url 'http://repo.spring.io/snapshot' }
+    maven { url 'http://repo.spring.io/milestone' }
+  }
+  dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:${project['spring-boot.version']}"
+  }
+}
+
+plugins {
+  id 'io.spring.dependency-management' version '1.0.0.RELEASE'
+}
+
+allprojects {
+
+  group 'name.webdizz.cdc'
+  version '1.0-SNAPSHOT'
+
+  repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+    maven { url "http://repo.spring.io/milestone" }
+    maven { url "http://repo.spring.io/release" }
+  }
+
+}
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'io.spring.dependency-management'
+
+  sourceCompatibility = 1.8
+
+  dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api'
+    compile group: 'com.google.guava', name: 'guava'
+
+    compileOnly group: 'org.projectlombok', name: 'lombok'
+
+    testCompile group: 'org.spockframework', name: 'spock-core'
+    testCompile group: 'junit', name: 'junit'
+  }
+
+  dependencyManagement {
+    imports {
+      mavenBom 'io.spring.platform:platform-bom:Athens-SR3'
+      mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.SR4'
+    }
+  }
+}
