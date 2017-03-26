@@ -24,8 +24,8 @@ class StockPriceController {
     private static final StockChange GOOG_STOCK_CHANGE = new StockChange(3.74, 2.02);
 
     private static final Map<String, StockPrice> stockPrices = ImmutableMap.of(
-            "NYSE:EPAM", new StockPrice("NYSE:EPAM", 73.32, EPAM_STOCK_CHANGE),
-            "NASDAQ:GOOG", new StockPrice("NASDAQ:GOOG", 819.67, GOOG_STOCK_CHANGE)
+            "NYSE:EPAM", new StockPrice("NYSE:EPAM", 73.32, EPAM_STOCK_MARKET_CAP),
+            "NASDAQ:GOOG", new StockPrice("NASDAQ:GOOG", 819.67, GOOG_STOCK_MARKET_CAP)
     );
 
     @RequestMapping("/stock/price/{party}")
@@ -37,7 +37,8 @@ class StockPriceController {
     static class StockPrice {
         private String party;
         private double price;
-        private StockChange change;
+//        private StockChange change;
+        private StockMarketCap marketCap;
     }
 
     @Value

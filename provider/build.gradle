@@ -3,7 +3,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath 'au.com.dius:pact-jvm-provider-gradle_2.11:3.5.0-beta.3'
+    classpath "au.com.dius:pact-jvm-provider-gradle_2.11:${project['pact.version']}"
   }
 }
 
@@ -12,7 +12,7 @@ apply plugin: 'au.com.dius.pact'
 
 dependencies {
   // CDC dependencies
-  compile group: 'au.com.dius', name: 'pact-jvm-provider-junit_2.11', version: '3.5.0-beta.3'
+  compile group: 'au.com.dius', name: 'pact-jvm-provider-junit_2.11', version: project['pact.version']
 
   compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
 
