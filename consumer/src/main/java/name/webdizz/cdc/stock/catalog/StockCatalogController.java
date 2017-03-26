@@ -1,4 +1,4 @@
-package name.webdizz.cdc.stock.catalog.controller;
+package name.webdizz.cdc.stock.catalog;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
