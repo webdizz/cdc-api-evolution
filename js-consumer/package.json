@@ -1,0 +1,18 @@
+{
+  "name": "stock-catalog-js",
+  "version": "1.0.0",
+  "description": "Price Catalog JS Service to provide data for parties along with prices",
+  "main": "stock-catalog.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "axios": "^0.14.0",
+    "jest-cli": "^15.1.1",
+    "pact": "^2.2.1"
+  }
+}
