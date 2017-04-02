@@ -31,6 +31,9 @@ pact {
       hasPactWith('StockCatalog') {
         pactFile = file("${rootProject.projectDir}/consumer/target/pacts/StockCatalog-StockPrice.json")
       }
+      hasPactWith('StockCatalogJS') {
+        pactFile = file("${rootProject.projectDir}/js-consumer/pacts/stockcatalogjs-stockprice.json")
+      }
     }
   }
 }
