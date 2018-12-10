@@ -1,3 +1,4 @@
+# add support for Cloud Build
 steps:
 - name: 'gcr.io/cloud-builders/gradle'
   args: ['build']
